@@ -5,24 +5,37 @@ document.addEventListener('DOMContentLoaded', function() {
     setupTabs();
 });
 
-// Load Feedback Images
+// Load Feedback Images (15 Photos)
 function loadFeedbackImages() {
     const imagesGrid = document.getElementById('imagesGrid');
     
-    // Tumhare EXACT 3 photo links
+    // 15 Photo links
     const feedbackLinks = [
-        'https://raw.githubusercontent.com/DARKxAZANUR/payment/main/feedback-image1.jpg',
-        'https://raw.githubusercontent.com/DARKxAZANUR/payment/main/feedback-image2.jpg',
-        'https://raw.githubusercontent.com/DARKxAZANUR/payment/main/feedback-image3.jpg'
+        'https://raw.githubusercontent.com/DARKxAZANUR/azan-feedback-web/main/feedback-image1.jpg',
+        'https://raw.githubusercontent.com/DARKxAZANUR/azan-feedback-web/main/feedback-image2.jpg',
+        'https://raw.githubusercontent.com/DARKxAZANUR/azan-feedback-web/main/feedback-image3.jpg',
+        'https://raw.githubusercontent.com/DARKxAZANUR/azan-feedback-web/main/feedback-image4.jpg',
+        'https://raw.githubusercontent.com/DARKxAZANUR/azan-feedback-web/main/feedback-image5.jpg',
+        'https://raw.githubusercontent.com/DARKxAZANUR/azan-feedback-web/main/feedback-image6.jpg',
+        'https://raw.githubusercontent.com/DARKxAZANUR/azan-feedback-web/main/feedback-image7.jpg',
+        'https://raw.githubusercontent.com/DARKxAZANUR/azan-feedback-web/main/feedback-image8.jpg',
+        'https://raw.githubusercontent.com/DARKxAZANUR/azan-feedback-web/main/feedback-image9.jpg',
+        'https://raw.githubusercontent.com/DARKxAZANUR/azan-feedback-web/main/feedback-image10.jpg',
+        'https://raw.githubusercontent.com/DARKxAZANUR/azan-feedback-web/main/feedback-image11.jpg',
+        'https://raw.githubusercontent.com/DARKxAZANUR/azan-feedback-web/main/feedback-image12.jpg',
+        'https://raw.githubusercontent.com/DARKxAZANUR/azan-feedback-web/main/feedback-image13.jpg',
+        'https://raw.githubusercontent.com/DARKxAZANUR/azan-feedback-web/main/feedback-image14.jpg',
+        'https://raw.githubusercontent.com/DARKxAZANUR/azan-feedback-web/main/feedback-image15.jpg'
     ];
     
-    // Ye 3 photos load karo
+    // Saari 15 photos load karo
     feedbackLinks.forEach((link, index) => {
         const imageItem = document.createElement('div');
         imageItem.className = 'feedback-item';
         imageItem.innerHTML = `
             <img src="${link}" 
-                 alt="Customer Feedback ${index + 1}">
+                 alt="Customer Feedback ${index + 1}"
+                 onerror="this.src='https://via.placeholder.com/300x200/2563eb/ffffff?text=Image+${index + 1}'">
             <div class="item-info">
                 <h3>Customer Review #${index + 1}</h3>
                 <p>Real user experience</p>
@@ -30,43 +43,42 @@ function loadFeedbackImages() {
         `;
         imagesGrid.appendChild(imageItem);
     });
-    
-    // 47 placeholder images (total 50)
-    for (let i = 4; i <= 50; i++) {
-        const imageItem = document.createElement('div');
-        imageItem.className = 'feedback-item';
-        imageItem.innerHTML = `
-            <img src="https://via.placeholder.com/300x200/2563eb/ffffff?text=Coming+Soon+${i}" 
-                 alt="Customer Feedback ${i}">
-            <div class="item-info">
-                <h3>Customer Review #${i}</h3>
-                <p>More feedback coming soon</p>
-            </div>
-        `;
-        imagesGrid.appendChild(imageItem);
-    }
 }
 
-// Load Feedback Videos
+// Load Feedback Videos (10 Videos)
 function loadFeedbackVideos() {
     const videosGrid = document.getElementById('videosGrid');
     
-    // 30 placeholder videos
-    for (let i = 1; i <= 30; i++) {
+    // 10 Video links
+    const videoLinks = [
+        'https://raw.githubusercontent.com/DARKxAZANUR/azan-feedback-web/main/feedback-video1.mp4',
+        'https://raw.githubusercontent.com/DARKxAZANUR/azan-feedback-web/main/feedback-video2.mp4',
+        'https://raw.githubusercontent.com/DARKxAZANUR/azan-feedback-web/main/feedback-video3.mp4',
+        'https://raw.githubusercontent.com/DARKxAZANUR/azan-feedback-web/main/feedback-video4.mp4',
+        'https://raw.githubusercontent.com/DARKxAZANUR/azan-feedback-web/main/feedback-video5.mp4',
+        'https://raw.githubusercontent.com/DARKxAZANUR/azan-feedback-web/main/feedback-video6.mp4',
+        'https://raw.githubusercontent.com/DARKxAZANUR/azan-feedback-web/main/feedback-video7.mp4',
+        'https://raw.githubusercontent.com/DARKxAZANUR/azan-feedback-web/main/feedback-video8.mp4',
+        'https://raw.githubusercontent.com/DARKxAZANUR/azan-feedback-web/main/feedback-video9.mp4',
+        'https://raw.githubusercontent.com/DARKxAZANUR/azan-feedback-web/main/feedback-video10.mp4'
+    ];
+    
+    // Saari 10 videos load karo
+    videoLinks.forEach((link, index) => {
         const videoItem = document.createElement('div');
         videoItem.className = 'feedback-item';
         videoItem.innerHTML = `
-            <video controls poster="https://via.placeholder.com/300x200/1e40af/ffffff?text=Video+${i}">
-                <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4">
+            <video controls>
+                <source src="${link}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <div class="item-info">
-                <h3>Video Review #${i}</h3>
-                <p>Demo video coming soon</p>
+                <h3>Video Review #${index + 1}</h3>
+                <p>Real user demo</p>
             </div>
         `;
         videosGrid.appendChild(videoItem);
-    }
+    });
 }
 
 // Tab Switching
