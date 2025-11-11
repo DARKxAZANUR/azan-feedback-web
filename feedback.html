@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Feedback - DARK X AZAN</title>
+    <link rel="stylesheet" href="feedback.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="feedback-container">
+        <!-- Feedback Header -->
+        <header class="feedback-header">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                Back to Home
+            </a>
+            <div class="feedback-title">
+                <h1>📸 Customer Feedback</h1>
+                <p>100k+ Real Reviews & Videos</p>
+            </div>
+        </header>
+
+        <!-- Feedback Stats -->
+        <div class="feedback-stats">
+            <div class="stat-card">
+                <div class="stat-icon">📸</div>
+                <div class="stat-info">
+                    <span class="stat-number">100k+</span>
+                    <span class="stat-label">Feedback Images</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🎥</div>
+                <div class="stat-info">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Feedback Videos</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⭐</div>
+                <div class="stat-info">
+                    <span class="stat-number">4.9/5</span>
+                    <span class="stat-label">Average Rating</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feedback Navigation Tabs -->
+        <div class="feedback-tabs">
+            <button class="tab-btn active" data-tab="images">
+                <i class="fas fa-images"></i>
+                Images (100k+)
+            </button>
+            <button class="tab-btn" data-tab="videos">
+                <i class="fas fa-video"></i>
+                Videos (50+)
+            </button>
+        </div>
+
+        <!-- Images Feedback Section -->
+        <section class="feedback-section images-section active">
+            <h2 class="section-title">
+                <i class="fas fa-camera"></i>
+                Customer Feedback Images
+            </h2>
+            <div class="feedback-grid" id="imagesGrid">
+                <!-- Images yahan load hongi -->
+            </div>
+        </section>
+
+        <!-- Videos Feedback Section -->
+        <section class="feedback-section videos-section">
+            <h2 class="section-title">
+                <i class="fas fa-film"></i>
+                Customer Feedback Videos
+            </h2>
+            <div class="feedback-grid" id="videosGrid">
+                <!-- Videos yahan load honge -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="feedback-footer">
+            <p>&copy; 2024 DARK X AZAN - Real Customer Feedback</p>
+            <a href="index.html" class="home-link">
+                <i class="fas fa-home"></i>
+                Back to Home
+            </a>
+        </footer>
+    </div>
+
+    <script src="feedback.js"></script>
+</body>
+</html>
