@@ -13,10 +13,11 @@ function loadVideos() {
     // Pehle existing videos clear karo
     videosGrid.innerHTML = '';
     
+    // GitHub se demo video links
     const videoFiles = [
-        'videos/video1.mp4',
-        'videos/video2.mp4',
-        'videos/video3.mp4'
+        'https://raw.githubusercontent.com/DARKxAZANUR/azan-feedback-web/main/demo_video1.mp4',
+        'https://raw.githubusercontent.com/DARKxAZANUR/azan-feedback-web/main/demo_video2.mp4',
+        'https://raw.githubusercontent.com/DARKxAZANUR/azan-feedback-web/main/demo_video3.mp4'
     ];
 
     videoFiles.forEach((videoPath, index) => {
@@ -159,29 +160,35 @@ function shareOnTwitter(text) {
 
 // === THEME TOGGLE ===
 const themeToggle = document.getElementById('themeToggle');
-themeToggle.addEventListener('click', function() {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    if (currentTheme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'light');
-        this.innerHTML = '<i class="fas fa-moon"></i> Dark Mode';
-    } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        this.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
-    }
-});
+if (themeToggle) {
+    themeToggle.addEventListener('click', function() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        if (currentTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            this.innerHTML = '<i class="fas fa-moon"></i> Dark Mode';
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            this.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
+        }
+    });
+}
 
 // === LANGUAGE SWITCH ===
 const languageSwitch = document.getElementById('languageSwitch');
-languageSwitch.addEventListener('change', function() {
-    const lang = this.value;
-    changeLanguage(lang);
-});
+if (languageSwitch) {
+    languageSwitch.addEventListener('change', function() {
+        const lang = this.value;
+        changeLanguage(lang);
+    });
+}
 
 function changeLanguage(lang) {
     const elements = document.querySelectorAll('[data-translate]');
     elements.forEach(element => {
         const key = element.getAttribute('data-translate');
-        element.textContent = translations[lang][key];
+        if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+        }
     });
 }
 
@@ -202,13 +209,6 @@ const translations = {
     }
 };
 
-// Features ko interactive banaye
-document.querySelectorAll('.feature-item').forEach(item => {
-    item.addEventListener('click', function() {
-        const featureName = this.querySelector('span').textContent;
-        alert(`🔧 ${featureName} - Redirecting to Telegram...`);
-    });
-});
 // WhatsApp Order Function
 function orderOnWhatsApp(productName, price) {
     // Tumhara WhatsApp link
@@ -229,3 +229,11 @@ function orderOnWhatsApp(productName, price) {
     // Order confirmation
     alert(`✅ Order placed! Order ID: ${orderId}\n\nRedirecting to WhatsApp...`);
 }
+
+// Features ko interactive banaye
+document.querySelectorAll('.feature-item').forEach(item => {
+    item.addEventListener('click', function() {
+        const featureName = this.querySelector('span').textContent;
+        alert(`🔧 ${featureName} - Redirecting to Telegram...`);
+    });
+});
